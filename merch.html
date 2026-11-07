@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Big John's Customs | Merch Demo</title>
+  <meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="merch.css"><script src="site.js" defer></script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; connect-src 'none'; base-uri 'none'">
+</head>
+<body class="merch-page"><a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap header-inner">
+<a class="brand" href="index.html"><img src="assets/logo.png" alt="Big John’s Customs Auto Glass"></a>
+<button class="menu secondary" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+<nav id="navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="our-story.html">Our Story</a><a href="insurance.html">Get Quote</a><a href="our-work.html">Our Work &amp; Reviews</a><a href="merch.html" aria-current="page">Shop Merch</a></nav>
+<a class="button header-quote" href="contact.html#quote">Get a Quote</a>
+</div></header>
+  <main class="merch-main" id="main">
+    <p class="demo-note">INTERACTIVE DEMO — No payments accepted or orders submitted. Artwork ratings are illustrative.</p>
+    <p class="merch-scroll-hint">Scroll sideways to browse the full storefront on smaller screens.</p>
+    <div class="stage-scroll" tabindex="0" role="region" aria-label="Merch storefront. Scroll horizontally on narrow screens.">
+      <div class="stage" id="stage">
+        <!-- This is the exact approved storefront image, not a regenerated approximation. -->
+        <img class="store-image" src="./assets/storefront-exact.png" alt="Big John's Customs merchandise storefront design with eight featured products" width="1672" height="941">
+        <div class="hotspots" id="hotspots" aria-label="Add merchandise to cart">
+          <button class="hotspot" data-sku="solar" aria-label="Add Solar Fan Straw Hat to cart"></button>
+          <button class="hotspot" data-sku="jacket" aria-label="Add Lightweight Work Jacket to cart"></button>
+          <button class="hotspot" data-sku="tumbler" aria-label="Add Stainless Tumbler to cart"></button>
+          <button class="hotspot" data-sku="trucker" aria-label="Add Trucker Hat to cart"></button>
+          <button class="hotspot" data-sku="hoodie" aria-label="Add Premium Hoodie to cart"></button>
+          <button class="hotspot" data-sku="tee" aria-label="Add T-Shirt to cart"></button>
+          <button class="hotspot" data-sku="cloth" aria-label="Add Microfiber Glass Cloth to cart"></button>
+          <button class="hotspot" data-sku="stickers" aria-label="Add Decal Sticker Pack to cart"></button>
+          <button class="hotspot" id="cart-open" aria-label="Open shopping cart"></button>
+        </div>
+        <!-- Replaces only the baked-in sample cart; everything else remains pixel-identical. -->
+        <section class="cart" id="cart" aria-label="Shopping cart">
+          <header class="cart-head"><strong>🛒 Your Cart <span id="cart-count">(0)</span></strong><button type="button" id="cart-collapse" class="icon-btn" aria-label="Minimize cart">−</button></header>
+          <div class="cart-badge">DEMO CART · No payment processing</div>
+          <div id="cart-items" class="cart-items" aria-live="polite"></div>
+          <footer class="cart-footer">
+            <div class="cost-row"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+            <p class="cart-disclaimer">Shipping and tax are not calculated in this demo.</p>
+            <button type="button" class="checkout" id="checkout">Proceed to Checkout →</button>
+            <button type="button" class="continue" id="continue">Continue Shopping</button>
+          </footer>
+        </section>
+      </div>
+    </div>
+  </main><footer><div class="wrap footer-inner"><div><strong>Big Johns Customs LLC</strong><br>703 Thomas Ave, Suite 104 · Leesburg, FL 34748<br><a href="tel:+13527871113">(352) 787-1113</a></div><div class="leonet-footer"><img src="assets/leonet-footer.png" alt="Powered by LeoNet Systems, LLC" width="2048" height="682"></div></div></footer>
+  <dialog id="checkout-dialog" aria-labelledby="checkout-title">
+    <h2 id="checkout-title">Checkout is the next screen</h2>
+    <p>Your cart is working as a local demonstration. No payment, address collection, or print-shop order is connected yet.</p>
+    <p id="checkout-summary"></p>
+    <button type="button" id="checkout-close" class="checkout">Return to Merch Store</button>
+  </dialog>
+  <script src="merch.js" defer></script>
+</body>
+</html>

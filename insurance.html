@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Insurance Cheat Sheet | Big Johns Customs</title><link rel="stylesheet" href="styles.css"><script src="site.js" defer></script><script src="insurance.js" defer></script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; connect-src 'none'; base-uri 'none'">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="header"><div class="wrap header-inner">
+<a class="brand" href="index.html"><img src="assets/logo.png" alt="Big John’s Customs Auto Glass"></a>
+<button class="menu secondary" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+<nav id="navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="our-story.html">Our Story</a><a href="insurance.html" aria-current="page">Get Quote</a><a href="our-work.html">Our Work &amp; Reviews</a><a href="merch.html">Shop Merch</a></nav>
+<a class="button header-quote" href="contact.html#quote">Get a Quote</a>
+</div></header>
+<main id="main" class="wrap insurance-page">
+<section class="intro">
+<p class="eyebrow">Smart Glass Intake · Insurance Cheat Sheet</p>
+<h1>Get It Done in One Call.</h1>
+<p>Be ready for the insurance quiz. We've got your cheat sheet.</p>
+<p>Demo only. Use sample vehicle and claim details. Answers stay in this page while it is open. Open carrier instructions separately to keep your sheet handy.</p>
+</section>
+<section class="block" id="quote" aria-labelledby="glass-options">
+<h2 id="glass-options">OEM or aftermarket?</h2>
+<p>Glass type describes the replacement part. A repair treats eligible damage in the existing windshield. A replacement installs a new pane. Ask the shop to confirm which service is suitable.</p>
+<div class="cards two">
+<article><h3>OEM glass</h3><p>A replacement part supplied through the vehicle maker’s original equipment program. Confirm fit and features using the VIN.</p><p><strong>$650 example replacement</strong></p></article>
+<article><h3>Aftermarket glass</h3><p>A replacement supplied outside the vehicle maker’s parts program. Confirm fit and equipment such as tint, heating, and camera compatibility.</p><p><strong>$400 example replacement</strong></p></article>
+</div>
+<p>Example figures are fictional. They do not account for your vehicle, taxes, calibration, or coverage. Manufacturer, part number, material, and DOT code need verification for the selected pane. <a href="https://www.govinfo.gov/app/details/CFR-2025-title49-vol6/CFR-2025-title49-vol6-sec571-205" target="_blank" rel="noopener noreferrer">U.S. glazing safety standard and marking rules</a>.</p>
+</section>
+<p><a href="#sheet-heading">Jump to your cheat sheet</a> · <a href="#filing">Carrier filing</a> · <a href="#schedule">Scheduling</a></p><div class="insurance-layout">
+<div>
+<form id="claim" class="form-panel" autocomplete="off">
+<h2>Build your glass request</h2>
+<p>Answer in any order. Leave unknowns blank and confirm them as you file.</p>
+<div class="fields">
+<label>Glass preference<select name="preference"><option value="">Undecided</option><option>OEM</option><option>Aftermarket</option></select></label>
+<label>How will you pay?<select name="payment"><option value="insurance">Insurance</option><option value="cash">Cash / out of pocket</option></select></label>
+</div>
+<div id="insurance-cost"><p>Some carrier estimates use a comparable aftermarket part as a pricing basis. Ask your insurer which part they will authorize and whether your policy covers OEM, a separate glass deductible, or any difference in cost.</p><p id="estimate"></p></div>
+<p id="cash-cost" hidden></p>
+<div id="carrier-fields" class="fields">
+<label>Insurance carrier<select name="carrier"><option value="">Choose carrier</option><option value="geico">GEICO</option><option value="progressive">Progressive</option><option value="other">Other / not listed</option></select></label>
+<label id="other-carrier" hidden>Carrier name<input name="otherCarrier" maxlength="80"></label><label>Policy number<input name="policy" maxlength="80"></label>
+<label>Deductible ($)<input name="deductible" type="number" min="0" step=".01" placeholder="If known"></label>
+<label>Glass coverage details<input name="coverage" maxlength="160" placeholder="If confirmed"></label>
+<label id="carrier-question" class="full" hidden><span></span><input name="extra" maxlength="160"></label>
+</div>
+<div class="fields">
+<div class="full"><label>Sample VIN<input name="vin" maxlength="17" placeholder="5UXWX7C5*BA" aria-describedby="vin-note"></label><p id="vin-note">Try the published NHTSA example, or enter sample vehicle details manually.</p><div class="intake-vin-actions"><button type="button" class="secondary" id="vin-sample">Use sample VIN</button><button type="button" class="secondary" id="vin-decode">Decode sample VIN</button></div><p id="vin-status" role="status"></p></div>
+<label>Vehicle year<input name="year" inputmode="numeric" maxlength="4"></label>
+<label>Vehicle make<input name="make" maxlength="60"></label>
+<label>Vehicle model<input name="model" maxlength="60"></label>
+<label>Damaged glass<select name="glass"><option value="">Choose glass</option><option>Windshield</option><option>Left front vent</option><option>Right front vent</option><option>Left front door</option><option>Right front door</option><option>Left rear door</option><option>Right rear door</option><option>Left quarter glass</option><option>Right quarter glass</option><option>Rear windshield</option><option>Front door (side unsure)</option><option>Rear door (side unsure)</option><option>Quarter glass (side unsure)</option><option>Other / unsure</option></select></label>
+<label>Requested service<select name="service"><option value="">Unsure</option><option>Repair</option><option>Replacement</option></select></label>
+<label>Service location<select name="serviceLocation"><option value="">Choose an option</option><option>Mobile</option><option>Leesburg shop</option><option>Either</option></select></label>
+<label>Where did it happen?<input name="incidentPlace" maxlength="160"></label>
+<label>When did it happen?<input name="incidentDate" type="date"></label>
+<label>Who was driving?<input name="driver" maxlength="100"></label>
+<label>Damage larger than a dollar bill?<select name="size"><option value="">Unsure</option><option>Yes</option><option>No</option></select></label>
+<label>Glass markings or features<input name="specs" maxlength="160" placeholder="DOT code, tint, camera, etc."></label>
+<label>Photos, if requested<input name="photos" type="file" accept="image/*" multiple></label>
+</div>
+<p>Photo names appear on the sheet as a reminder. Attach the actual files directly in the insurer’s portal if requested.</p>
+</form>
+<section class="form-panel insurance-panel" id="filing">
+<h2>File with your carrier</h2>
+<p id="carrier-instructions"></p>
+<p><a id="carrier-link" target="_blank" rel="noopener noreferrer" hidden></a></p>
+<p id="assignment-guide"></p>
+<button class="secondary" type="button" id="mark-filed">Mark filed in this demo</button>
+<p id="claim-status" role="status">Customer filing: Not marked filed.</p>
+<p>Shop assignment: Unverified. The shop must confirm receipt separately.</p>
+</section>
+<section class="form-panel insurance-panel" id="schedule">
+<h2>Request a service day</h2>
+<p id="schedule-location"></p><p id="schedule-guide">The shop will confirm the appointment window after receiving the assignment.</p><p> <a href="tel:+13527871113">Call (352) 787-1113</a> if you need to speak with the shop.</p>
+<form id="schedule-form">
+<div class="fields">
+<label>Preferred day<input name="day" type="date" required></label>
+<label>Sooner contact?<select name="sooner"><option>No</option><option>Yes</option></select></label>
+<label class="full">Scheduling notes<textarea name="notes" rows="3" maxlength="500"></textarea></label>
+</div>
+<button class="button" type="submit" disabled>Save demo request</button>
+<p id="schedule-result" role="status"></p>
+</form>
+</section>
+</div>
+<aside class="form-panel insurance-sheet" aria-labelledby="sheet-heading">
+<h2 id="sheet-heading" tabindex="-1">Your cheat sheet</h2>
+<p>Find and copy whichever answer the insurer asks for.</p>
+<button type="button" class="secondary" id="copy-all">Copy all answers</button>
+<p id="copy-status" role="status"></p>
+<dl id="sheet"></dl>
+</aside>
+</div>
+<section class="block cards two" aria-label="Demo records">
+<article><h2>Post-service review</h2>
+<form id="feedback-form">
+<div class="fields">
+<label class="full">How many times did you have to speak with your insurance company?<input name="calls" type="number" min="0" step="1" required></label>
+<label class="full">Sample review<textarea name="review" rows="3" maxlength="500"></textarea></label>
+</div><button class="secondary" type="submit" disabled>Save demo review</button><p id="feedback-result" role="status"></p>
+</form></article>
+<article><h2>Invoice Studio demo</h2>
+<p>Compare two sample invoice outputs for the same demo job. The customer invoice stays separate from the carrier version.</p>
+<button class="secondary" type="button" id="show-invoices">Show both invoices</button>
+<div id="invoices" hidden><h3>Standard customer invoice</h3><pre id="customer-invoice"></pre><h3>Insurance invoice</h3><pre id="carrier-invoice"></pre></div>
+</article>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><div><strong>Big Johns Customs LLC</strong><br>703 Thomas Ave, Suite 104 · Leesburg, FL 34748<br><a href="tel:+13527871113">(352) 787-1113</a></div><div class="leonet-footer"><img src="assets/leonet-footer.png" alt="Powered by LeoNet Systems, LLC" width="2048" height="682"></div></div></footer>
+</body></html>
