@@ -1,0 +1,47 @@
+.quote-hero{display:grid;gap:1.15rem;padding-block:1.75rem 1.35rem;align-items:center}
+.quote-hero h1{margin:.25rem 0 .5rem;font-size:clamp(3rem,8vw,5.5rem)}
+.quote-hero p:not(.eyebrow){max-width:42ch;margin:0 0 1.15rem}
+.quote-hero img{width:100%;aspect-ratio:2.6;object-fit:cover;object-position:center 39%;border:1px solid #74767a;border-radius:.5rem}
+.quote-page .quote-workbench{max-width:900px;padding-bottom:3rem}
+.quote-progress{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem;margin:0 0 1.55rem;padding:.35rem;border:1px solid #656970;border-radius:.5rem;background:linear-gradient(#282c31,#131619)}
+.quote-progress a{display:grid;place-items:center;min-height:44px;border-radius:.3rem;color:var(--ink);text-align:center;font-weight:700;text-decoration:none}
+.quote-progress a:hover,.quote-progress a[aria-current]{background:#3b261b;color:#ffd2ad;box-shadow:inset 0 -2px #ff9a4f}
+.quote-page .quote-workbench fieldset{scroll-margin-top:6rem;padding:1rem 0 .4rem;margin-bottom:1.65rem}
+.quote-page .quote-workbench legend{font-size:clamp(1.3rem,3vw,1.65rem)}
+.quote-page .quote-workbench label{font-weight:650;min-width:0}
+.quote-page .quote-workbench small,.quote-hint{color:#c2c5ca;font-weight:400}
+.quote-hint{font-size:.9rem}
+.quote-page .quote-workbench input,.quote-page .quote-workbench select,.quote-page .quote-workbench textarea{min-height:48px;margin:.32rem 0 .8rem;background:#121519;border-color:#777e87;font-size:1rem}
+.quote-page .quote-workbench input:focus,.quote-page .quote-workbench select:focus,.quote-page .quote-workbench textarea:focus{outline:2px solid #ffab72;outline-offset:2px}
+.quote-grid{display:grid;gap:0 1rem}
+.quote-vin{display:flex;gap:.65rem;align-items:end;flex-wrap:wrap}
+.quote-vin label{flex:1 1 12rem}
+.quote-vin button{min-height:48px;margin-bottom:.8rem}
+.quote-page [hidden]{display:none!important}
+.quote-submit{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;padding:1rem 0;border-top:1px solid #777d83}
+.quote-submit .button{min-height:48px;font:inherit;font-weight:800;cursor:pointer}
+.quote-submit .button:disabled{opacity:.62;cursor:default}
+.quote-result{padding:1rem 1.15rem;border:1px solid #d18a53;border-left-width:4px;border-radius:.4rem;background:#231911;color:#ffe0c4}
+.quote-result[data-state=success]{border-color:#86b590;background:#142318;color:#e7f5e9;font-weight:750}
+@media(min-width:660px){.quote-hero{grid-template-columns:1fr .85fr;gap:2.5rem;padding-block:2.75rem 2rem}.quote-hero img{aspect-ratio:1.9}.quote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-vehicle{grid-template-columns:.65fr 1fr 1fr}.quote-wide{grid-column:1/-1}}
+.quote-hero-actions{display:flex;align-items:center;gap:.65rem 1rem;flex-wrap:wrap}
+.quote-submit .secondary{min-height:44px}
+.quote-progress{list-style:none;padding:.4rem}
+.quote-progress li{display:flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px;border-radius:.3rem;color:var(--ink);font-weight:700}
+.quote-progress li span{display:grid;place-items:center;border:1px solid #777e87;border-radius:50%;width:1.5rem;height:1.5rem;font-size:.82rem}
+.quote-progress li[aria-current]{background:#3b261b;color:#ffd2ad;box-shadow:inset 0 -2px #ff9a4f}
+.quote-guide-link{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.4rem 1rem;margin-bottom:1rem}
+.quote-guide-link p{margin:0}
+.quote-guide-link a span{font-size:.8em}
+.quote-page .quote-workbench legend{font-family:"Barlow Condensed","Arial Narrow",system-ui,sans-serif}
+.quote-page .quote-workbench .button:not(.secondary){background:#ff8a28;color:#201206;border-color:#ffb773;text-shadow:none}
+.quote-page .quote-workbench .button:not(.secondary):hover{background:#c35412;color:#fff}
+.quote-photo-box,.quote-review{margin-top:1.25rem;padding:1rem;border:1px solid #737981;border-radius:.45rem;background:#181b1f}
+.quote-photo-previews{display:flex;flex-wrap:wrap;gap:.6rem}
+.quote-photo-previews img{width:90px;height:70px;object-fit:contain;background:#101215;border:1px solid #707680;border-radius:.25rem}
+.quote-review h2{margin-top:0;font-size:1.35rem}
+.quote-review dl{margin:0}
+.quote-review dl div{display:grid;grid-template-columns:6rem 1fr;gap:.55rem;padding:.35rem 0}
+.quote-review dt{font-weight:700}
+.quote-review dd{margin:0;overflow-wrap:anywhere}
+.quote-page .skip:not(:focus){clip-path:inset(50%)}

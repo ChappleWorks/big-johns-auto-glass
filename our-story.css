@@ -1,0 +1,9 @@
+.family-story{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(1.25rem,3vw,2.2rem);border-block:1px solid #64666b}
+.family-story-copy,.family-story-today{max-width:66ch}
+.family-story-copy h2,.family-story-today h3{margin:.25rem 0 .7rem}
+.family-story-today h3{font-size:clamp(1.35rem,3vw,1.8rem)}
+.family-photos{display:flex;flex-wrap:wrap;gap:1rem 1.4rem;align-items:start}
+.family-photos figure{margin:0;max-width:100%}
+.family-photos img{display:block;height:auto;max-width:100%;border:1px solid #777b82;border-radius:.2rem;box-shadow:0 .7rem 1.25rem #0006}
+.family-photos figcaption{max-width:36ch;margin-top:.55rem;color:var(--muted,#d4d6db);font-size:.9rem}
+@media(min-width:940px){.family-story{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:start}.family-photos{grid-column:2;grid-row:1 / span 2;flex-wrap:nowrap}.family-story-today{grid-column:1}.family-photos figure{flex:356 1 0;min-width:0}.family-photos figure+figure{flex-grow:247}}

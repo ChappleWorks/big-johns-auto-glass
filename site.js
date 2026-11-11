@@ -1,6 +1,6 @@
 const menu = document.querySelector('.menu');
 const navigation = document.querySelector('#navigation');
-const compact = matchMedia('(max-width: 760px)');
+const compact = matchMedia('(max-width: 900px)');
 
 function setMenu(open) {
   menu.hidden = !compact.matches;

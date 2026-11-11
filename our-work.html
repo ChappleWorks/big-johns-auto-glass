@@ -1,10 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Our Work &amp; Reviews | Big Johns Customs</title><link rel="stylesheet" href="styles.css"><script src="site.js" defer></script><script src="our-work.js" defer></script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; connect-src 'none'; base-uri 'none'">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="See Big John’s mobile and in-shop auto glass work in Leesburg, Florida, and read sourced customer reviews."><title>Our Work &amp; Reviews | Big Johns Customs</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="enhancement.css"><script src="site.js" defer></script><script src="our-work.js" defer></script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; connect-src 'none'; base-uri 'none'">
 </head><body><a class="skip" href="#main">Skip to content</a>
 <header class="header"><div class="wrap header-inner">
-<a class="brand" href="index.html"><img src="assets/logo.png" alt="Big John’s Customs Auto Glass"></a>
+<a class="brand" href="index.html"><img src="assets/big-johns-chrome-header.webp" width="1536" height="1024" decoding="async" alt="Big John’s Customs Auto Glass"></a>
 <button class="menu secondary" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
-<nav id="navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="our-story.html">Our Story</a><a href="insurance.html">Get Quote</a><a href="our-work.html" aria-current="page">Our Work &amp; Reviews</a><a href="merch.html">Shop Merch</a></nav>
-<a class="button header-quote" href="contact.html#quote">Get a Quote</a>
+<nav id="navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="our-story.html">Our Story</a><a href="quote.html">Get Quote</a><a href="our-work.html" aria-current="page">Our Work &amp; Reviews</a><a href="merch.html">Shop Merch</a></nav>
+<a class="button header-quote" href="quote.html#quote">Get a Quote</a>
 </div></header>
 <main id="main" class="wrap work-page">
 <section class="intro"><p class="eyebrow">Big John’s Customs · Leesburg, FL</p><h1>Our Work &amp; Reviews</h1><p>See the shop at work and hear from customers who’ve been in the driver’s seat.</p></section>
@@ -13,44 +13,28 @@
 <div class="work-controls" id="work-filters" role="group" aria-label="Filter work by category">
 <button class="secondary" type="button" aria-pressed="true" data-category="all">All work</button>
 <button class="secondary" type="button" aria-pressed="false" data-category="Windshields">Windshields</button>
-<button class="secondary" type="button" aria-pressed="false" data-category="Back Glass">Back Glass</button>
-<button class="secondary" type="button" aria-pressed="false" data-category="Door Glass">Door Glass</button>
+
+
 <button class="secondary" type="button" aria-pressed="false" data-category="Custom Work">Custom Work</button>
 </div>
-<div class="work-gallery">
-<div id="work-stage" class="work-stage"></div>
-<div class="work-caption"><div><p class="eyebrow" id="work-category"></p><h3 id="work-title"></h3><p id="work-note"></p></div>
-<div id="work-arrows" class="work-controls" aria-label="Gallery navigation"><button class="secondary" type="button" id="work-prev" aria-label="Previous job">←</button><button class="secondary" type="button" id="work-next" aria-label="Next job">→</button></div></div>
+<div class="work-gallery" role="region" aria-label="Auto glass work carousel">
+<div id="work-stage" class="work-stage" tabindex="0" aria-label="Work preview. Use left and right arrows to browse."></div>
+<div class="work-caption"><div><p class="eyebrow" id="work-category"></p><h3 id="work-title" aria-live="polite"></h3><p id="work-note"></p></div>
+<div id="work-arrows" class="work-controls" aria-label="Gallery navigation"><button class="secondary" type="button" id="work-prev" aria-label="Previous job">←</button><span id="work-count" role="status"></span><button class="secondary" type="button" id="work-next" aria-label="Next job">→</button></div></div>
 <div class="work-thumbs" id="work-thumbs" aria-label="Gallery thumbnails"></div>
 </div>
 <dialog class="work-lightbox" id="work-lightbox"><button class="secondary" type="button" id="work-close">Close photo</button><img alt=""></dialog>
 </section>
 <section class="block" aria-labelledby="review-heading">
 <p class="eyebrow">Customer reviews</p><h2 id="review-heading">What customers say.</h2>
-<div class="form-panel review-card">
-<blockquote id="review-quote"></blockquote>
+<div class="form-panel review-card enhancement-review">
+<blockquote id="review-quote" aria-live="polite"></blockquote>
 <p id="review-credit"></p>
 <a href="https://www.loc8nearme.com/florida/leesburg/big-johns-customs/8178378/" target="_blank" rel="noopener noreferrer">Read the source listing ↗</a>
 <div class="work-controls"><button class="secondary" type="button" id="review-prev" aria-label="Previous review">←</button><span id="review-count" role="status"></span><button class="secondary" type="button" id="review-next" aria-label="Next review">→</button></div>
 </div>
 <p><a class="text-link" href="https://www.bbb.org/us/fl/leesburg/profile/windshield-replacement/big-johns-customs-llc-0733-235961268/leave-a-review" target="_blank" rel="noopener noreferrer">Leave a review on BBB ↗</a></p>
 </section>
-<section class="form-panel" aria-labelledby="feedback-heading">
-<p class="eyebrow">Example feedback · Local demo</p><h2 id="feedback-heading">Tell us about your insurance experience.</h2>
-<p>Use sample answers only. This demo stores feedback in your browser tab.</p><form id="work-feedback" autocomplete="off">
-<div class="fields">
-<label class="full">How many times did you have to speak with your insurance company?<select name="calls" required><option value="">Choose one</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></label>
-<label>Was Big John’s assigned correctly the first time?<select name="first"><option value="">Optional</option><option>Yes</option><option>No</option><option>Not sure</option></select></label>
-<label>Did the insurer require a correction?<select name="correction"><option value="">Optional</option><option>Yes</option><option>No</option><option>Not sure</option></select></label>
-<label class="full">What caused additional calls?<textarea name="notes" rows="3" maxlength="500"></textarea></label>
-</div>
-<button class="secondary" type="submit" disabled>Save demo feedback</button><p id="work-feedback-result" role="status"></p>
-</form>
-</section>
-<details class="form-panel work-demo"><summary>Preview the LeoNet publishing workflow</summary>
-<p>These sample job records use the gallery media. Changes apply to this browser tab’s demo, including the homepage preview.</p>
-<div id="work-admin"></div><p id="work-admin-status" role="status"></p><a href="index.html#work-feature">View homepage feature preview →</a>
-</details>
 </main>
-<footer><div class="wrap footer-inner"><div><strong>Big Johns Customs LLC</strong><br>703 Thomas Ave, Suite 104 · Leesburg, FL 34748<br><a href="tel:+13527871113">(352) 787-1113</a></div><div class="leonet-footer"><img src="assets/leonet-footer.png" alt="Powered by LeoNet Systems, LLC" width="2048" height="682"></div></div></footer>
+<footer class="site-footer"><div class="wrap footer-inner"><div><strong>Big Johns Customs LLC</strong><br>703 Thomas Ave, Suite 104, Leesburg, FL 34748<br><a href="tel:+13527871113">(352) 787-1113</a></div><div>Monday–Friday, 9 AM–6 PM<br>Saturday and Sunday by appointment only<br><a href="https://www.facebook.com/profile.php?id=100064086723256">Facebook</a></div></div><div class="leonet-strip"><a class="leonet-footer" href="https://leonetsystems.com/"><img src="assets/leonet-footer-display.webp" alt="Powered by LeoNet Systems, LLC" width="2048" height="682"></a></div></footer>
 </body></html>

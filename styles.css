@@ -59,6 +59,18 @@ p, address { color: var(--muted); }
 .quote-inner, .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .quote-inner h2 { margin: 0; }
 footer { padding-block: 2rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+.site-footer { padding-block-end: 0; }
+.site-footer .footer-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  padding-block-end: 2rem;
+}
+@media (max-width: 600px) {
+  .site-footer .footer-inner { grid-template-columns: minmax(0, 1fr); }
+}
+.leonet-strip { border-top: 1px solid var(--line); padding-inline: 1rem; }
+.leonet-strip .leonet-footer { display: block; margin-inline: auto; }
 .leonet-footer {
   position: relative;
   width: min(400px, 100%);
@@ -214,3 +226,110 @@ textarea { resize: vertical; }
 /* Smart intake */
 .intake-vin-actions { display:flex; gap:.5rem; flex-wrap:wrap; }
 .insurance-page #quote { scroll-margin-top:1rem; }
+
+/* Premium automotive review theme. Shared across the existing routes. */
+:root{--black:#08090b;--surface:#171a1d;--line:#42474d;--ink:#f6f7f8;--muted:#c8cbd0;--red:#9b4109;--bright:#ffad6d}
+body{background:radial-gradient(ellipse at 52% 0,#24282d 0,transparent 40rem),var(--black)}
+.header{background:linear-gradient(177deg,#1b1e22,#090a0c 72%);border-bottom-color:#585d63;box-shadow:0 8px 24px #0006}
+nav a:hover,nav a[aria-current]{box-shadow:inset 0 -2px #ff883d}
+:focus-visible{outline-color:#ffc493}
+.button:not(.secondary){background:linear-gradient(175deg,#aa4e16,#743007);border-color:#ff9a4f;box-shadow:inset 0 1px #ffd2ae6b,0 6px 18px #0008}
+.hero{border-bottom:1px solid #6c5a49}
+.hero-copy h1{font-size:clamp(2.65rem,6.2vw,6.3rem);letter-spacing:-.062em;text-shadow:0 4px 22px #000c}
+.hero-copy h1 em{color:#ffb47d}
+.hero-photo{width:76%;object-position:center 49%}
+.hero::after{background:linear-gradient(90deg,#080a0d 7%,#080a0df3 27%,#080a0d54 63%,#080a0d08 86%),linear-gradient(0deg,#090b0ed0,transparent 33%)}
+.strip,.quote-band{background:linear-gradient(115deg,#22272c,#101216);border-color:#66605a}
+.strip span{letter-spacing:.035em}
+.cards article,.form-panel,.glass-details{background:linear-gradient(145deg,#262a2f,#121416 72%);border-color:#454a50;border-top-color:#7b838d;box-shadow:inset 0 1px #e0e7ef16,0 10px 27px #0005}
+.quote-intro{padding-bottom:0}.quote-intro h1{font-size:clamp(2.55rem,6vw,5rem)}
+.quote-workbench{max-width:850px}
+.quote-workbench fieldset{min-width:0;margin:0 0 1.25rem;padding:1rem;border:1px solid #64686e;border-radius:.45rem}
+.quote-workbench legend{padding:0 .45rem;color:var(--bright);font-weight:800}
+.quote-workbench label{display:block}
+.quote-workbench input,.quote-workbench select,.quote-workbench textarea{display:block;width:100%;margin:.25rem 0 .6rem}
+.quote-workbench [role=status]:empty{display:none}
+.quote-workbench .secondary,.merch-intro .secondary{padding:.65rem .85rem;border:1px solid #8a9199;border-radius:.35rem;color:var(--ink);font:inherit;cursor:pointer}
+#quote-mode{padding:.7rem;border-left:3px solid #ef8b45;background:#111316}
+@media(max-width:760px){.hero-photo{width:100%;object-position:center}.hero::after{background:linear-gradient(0deg,#090b0e 4%,#090b0ee5 45%,#090b0e20 100%)}}
+@media(prefers-reduced-motion:reduce){.button,.menu{transition:none}}
+.shirt-swatch{display:grid;place-items:center;min-height:175px;margin:1rem 0;background:#07090a;border:1px solid #7c8287;clip-path:polygon(25% 0,40% 0,45% 7%,55% 7%,60% 0,75% 0,100% 21%,87% 47%,75% 41%,75% 100%,25% 100%,25% 41%,13% 47%,0 21%);text-align:center}
+.shirt-swatch span{font:650 .72rem/1.3 system-ui;color:#ffad6d;border:1px dashed #ae744b;padding:.4rem;letter-spacing:0;text-transform:none;margin:0}
+.chrome-shirt span{transform:translate(24px,-33px)}
+.division-shirt{background:linear-gradient(110deg,#20252b 58%,#8a431d 58%,#8a431d 62%,#22272d 62%,#22272d 66%,#a65b2e 66%,#a65b2e 69%,#20252b 69%)}
+
+/* Chrome emblem integration. The source artwork and GMC photograph stay intact. */
+.brand{flex:none}
+.brand img{width:clamp(118px,11vw,148px);height:auto;border-radius:0}
+.header{background:radial-gradient(ellipse at 12% 95%,#362114 0%,transparent 29%),linear-gradient(177deg,#222428,#090a0c 74%);border-bottom-color:#765542}
+.button:not(.secondary){background:linear-gradient(175deg,#a74b12,#713008);border-color:#ed9250}
+.secondary:hover,.glass-parts button:hover,.work-thumb:hover{border-color:#eaa472}
+.glass-parts button[aria-pressed="true"],.work-controls [aria-pressed="true"],.work-thumb[aria-pressed="true"]{background:#40251a;border-color:#f49b5c;color:#fff7f0}
+.work-compare-controls input{accent-color:#f39a5c}
+.orbit-dial:focus-visible{outline-color:#ffc493}
+.hero::before{content:"";position:absolute;z-index:0;pointer-events:none;inset:auto 0 0 48%;height:24%;background:radial-gradient(ellipse at 88% 110%,#ff7b2640,transparent 68%)}
+.hero-copy{position:relative;z-index:1}
+.hero{border-bottom-color:#aa6538}
+.quote-band{border-color:#805335}
+.board-emblem{width:min(320px,100%);height:auto}
+@media(max-width:760px){.brand img{width:clamp(85px,26vw,112px)}.hero::before{height:16%;inset-inline-start:34%}}
+
+/* Editorial refinement: type, open surfaces, and controls with a clear job. */
+@font-face{font-family:"Barlow Condensed";src:url("assets/fonts/BarlowCondensed-ExtraBold.ttf") format("truetype");font-style:normal;font-weight:800;font-display:swap}
+:root{--black:#090a0c;--surface:#24282d;--ink:#f3f0ea;--muted:#d2d0cb;--bright:#ffb36b;--steel:#d9dee3;--orange:#ff7900}
+h1,h2,h3,.cards article h2,.merch-product h2{font-family:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;font-weight:800;letter-spacing:.005em}
+h1{font-size:clamp(3.5rem,7.6vw,7.5rem);line-height:.9}
+h2{font-size:clamp(2.1rem,4.6vw,4rem);line-height:.98}
+h3{font-size:clamp(1.55rem,2.4vw,2.1rem)}
+.hero-copy h1{font-size:clamp(3.55rem,8.4vw,8.2rem);line-height:.88;letter-spacing:.002em}
+.hero-copy h1 em{color:var(--steel)}
+.eyebrow{font-size:.82rem;letter-spacing:.115em}
+.header{position:relative;z-index:2;background:repeating-linear-gradient(0deg,#ffffff07 0,#ffffff07 1px,transparent 1px,transparent 4px),linear-gradient(180deg,#23262b,#0c0e11 66%);border-bottom:1px solid #9da4ad;box-shadow:0 9px 23px #0008}
+.header-inner{position:relative;padding-inline-start:clamp(9rem,16vw,13.5rem);gap:clamp(.6rem,2vw,1.5rem)}
+.header .brand{position:absolute;top:.28rem;left:0;z-index:2}
+.header .brand img{width:clamp(8rem,15vw,13rem);height:auto;filter:drop-shadow(0 12px 12px #000b)}
+.header nav{gap:clamp(.75rem,1.9vw,1.85rem)}
+.header nav a{font-size:.94rem}
+.header nav a:hover{background:linear-gradient(0deg,#ffffff0d,transparent 70%)}
+.header nav a[aria-current]{box-shadow:inset 0 -2px var(--orange)}
+.button:not(.secondary){border-color:#c69370;background:linear-gradient(174deg,#ad541e 0%,#8d3d12 48%,#5f2509);box-shadow:inset 0 1px #ffe4cb87,inset 1px 0 #ffbf7b45,0 3px 0 #221106,0 8px 18px #0007}
+.button.secondary,.menu.secondary{border-color:#9298a0;background:linear-gradient(#2c3137,#15181c);box-shadow:inset 0 1px #ffffff38,0 3px 0 #08090b}
+.button:active,.menu:active{box-shadow:inset 0 2px 5px #0009}
+.hero::after{background:linear-gradient(90deg,#090a0c 8%,#090a0cec 26%,#090a0c63 51%,#090a0c05 84%),linear-gradient(0deg,#090a0ca6,transparent 32%)}
+.hero::before{opacity:.45}
+.block{padding-block:clamp(2.6rem,6vw,5.7rem)}
+.cards{gap:clamp(1.25rem,3vw,2.8rem)}
+.cards article,.review-card{background:none;border:0;border-top:1px solid #737a80;border-radius:0;box-shadow:none;padding:1rem 0 .4rem}
+.cards article h2{font-size:clamp(1.8rem,3vw,2.55rem)}
+.split img{border-radius:.15rem;border:0;box-shadow:0 17px 34px #0007}
+.strip{background:#17191c;border-top:1px solid #60666d}
+.strip span+span{border-left-color:#494d51}
+.quote-band{background:linear-gradient(125deg,#16191d,#0d0f11 68%);border-color:#555b61}
+.glass-explorer{border:0;border-top:1px solid #717981;border-radius:0;background:none}
+.vehicle-stage{background:#000;padding:1rem 0}
+.glass-details{background:none;border:0;box-shadow:none}
+.glass-description{min-height:0;padding-top:1rem}
+.glass-studio-emblem{width:min(65%,290px);height:auto;justify-self:center;filter:drop-shadow(0 8px 12px #0009)}
+.orbit-window{width:min(100%,540px);aspect-ratio:600/420;position:relative;overflow:hidden;justify-self:center}
+.orbit-window #glass-vehicle{position:absolute;bottom:0;width:100%;height:auto;max-height:none;background:none}
+.quote-workbench .form-panel{padding:0;background:none;border:0;box-shadow:none}
+.quote-workbench fieldset{border:0;border-top:1px solid #777d83;border-radius:0;padding:1rem 0;margin-bottom:1.5rem}
+.quote-workbench legend{padding:0 .65rem 0 0;font-size:1.12rem}
+.quote-workbench input,.quote-workbench select{min-height:46px}
+.merch-product{border-color:#525960;background:#14171a;box-shadow:0 5px 13px #0005}
+@media(max-width:900px){
+ .header-inner{padding-inline-start:clamp(6.7rem,28vw,8rem)}
+ .header .brand img{width:clamp(5.8rem,26vw,7.6rem)}
+ .header .brand{top:.3rem}
+ .header nav{gap:0}
+ .header nav a{font-size:1rem;padding:12px 0}
+ .header-inner{justify-content:flex-end}
+ .header nav{position:absolute;top:100%;right:0;width:min(100%,21rem);display:grid;padding:.5rem 1rem;background:linear-gradient(150deg,#24282d,#101216);border:1px solid #777e87;box-shadow:0 16px 28px #000a}
+ .header nav a+a{border-top:1px solid #454a50}
+}
+@media(max-width:760px){
+ .hero-copy h1{font-size:clamp(3.2rem,10vw,5.1rem)}
+ .hero::after{background:linear-gradient(0deg,#090a0c 10%,#090a0ceb 53%,#090a0c22 100%)}
+ .block{padding-block:2.5rem}
+}
+@media(max-width:370px){.header-inner{padding-inline-start:6rem}.header .brand img{width:5.6rem}.header .menu,.header .header-quote{font-size:.78rem;padding-inline:.5rem}}

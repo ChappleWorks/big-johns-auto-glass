@@ -24,7 +24,7 @@ for (const button of buttons) {
     const link = panel.querySelector('a');
     link.href = 'services.html#' + target;
     link.textContent = linkText + ' →';
-    quote.href = 'contact.html?glass=' + encodeURIComponent(glassChoices[button.dataset.part]) + '#quote';
+    quote.href = 'quote.html?glass=' + encodeURIComponent(glassChoices[button.dataset.part]) + '#quote';
     for (const option of buttons) {
       option.setAttribute('aria-pressed', String(option === button));
     }
@@ -33,16 +33,28 @@ for (const button of buttons) {
 
 const vehicle = document.querySelector('#glass-vehicle');
 const dial = document.querySelector('.orbit-dial');
-const frames = Array.from({ length: 12 }, (_, index) => {
-  const image = new Image();
-  image.src = 'assets/fixed-orbit/' + String(index).padStart(2, '0') + '.webp';
-  return image;
-});
+const frames = Array.from({ length: 12 }, (_, index) =>
+  'assets/fixed-orbit/' + String(index).padStart(2, '0') + '.webp'
+);
+const preloadedFrames = [];
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    observer.disconnect();
+    for (const source of frames.slice(1)) {
+      const image = new Image();
+      image.fetchPriority = 'low';
+      image.src = source;
+      preloadedFrames.push(image);
+    }
+  }, { rootMargin: '160px' });
+  observer.observe(vehicle);
+}
 let current = 0;
 let drag;
 function showFrame(index) {
   current = (index % frames.length + frames.length) % frames.length;
-  vehicle.src = frames[current].src;
+  vehicle.src = frames[current];
 }
 for (const control of [vehicle, dial]) {
   control.addEventListener('pointerdown', (event) => {
@@ -53,7 +65,7 @@ for (const control of [vehicle, dial]) {
   control.addEventListener('pointermove', (event) => {
     if (drag?.id !== event.pointerId) return;
     const step = Math.round((event.clientX - drag.x) / 28);
-    const target = (drag.start + step + frames.length) % frames.length;
+    const target = ((drag.start + step) % frames.length + frames.length) % frames.length;
     if (target !== current) showFrame(target);
   });
   for (const name of ['pointerup', 'pointercancel', 'lostpointercapture']) {

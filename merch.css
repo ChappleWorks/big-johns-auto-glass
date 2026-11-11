@@ -49,3 +49,33 @@
 @media (max-width: 1000px) {
   .merch-page .merch-scroll-hint { display:block; }
 }
+
+/* Responsive catalog retains the existing session cart and demo-only checkout. */
+.merch-intro{padding-bottom:1.25rem}
+.merch-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,29%);gap:1.15rem;padding-bottom:3rem}
+.merch-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+.merch-product{display:flex;min-width:0;flex-direction:column;overflow:hidden;border:1px solid #5a6068;border-top-color:#9aa2ab;border-radius:9px;background:linear-gradient(155deg,#292c30,#141619 72%);box-shadow:inset 0 1px #fff2,0 10px 21px #0005}
+.merch-product img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.merch-product>div{display:grid;gap:.35rem;padding:.85rem;flex:1}
+.merch-product h2{font-size:1.16rem;margin:0}
+.merch-product p{margin:0;font-size:.86rem}
+.merch-product small{color:var(--bright);font-weight:500}
+.merch-product .button{margin-top:.45rem;padding:.45rem .55rem;font-size:.84rem}
+.merch-page .merch-layout .cart{position:sticky;inset:auto;top:1rem;align-self:start;width:auto;padding:1rem;border:1px solid #707780;border-radius:9px;font-size:1rem}
+.merch-page .cart-items{max-height:36vh}
+.merch-page .checkout{background:linear-gradient(#a34e1e,#6b2e0d);border-color:#ef9d63}
+.merch-page dialog{border-color:#d58a57}
+@media(max-width:1000px){.merch-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:740px){.merch-layout{grid-template-columns:1fr}.merch-page .merch-layout .cart{position:static}.merch-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:360px){.merch-products{grid-template-columns:1fr}}
+
+.merch-page .cart-badge{color:#ffd1aa}
+.merch-page .item button:hover,.merch-page .continue:hover{border-color:#eaa472}
+
+.merch-art{position:relative;aspect-ratio:27/17;overflow:hidden;background:#141619}
+.merch-art .merch-base{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:fill}
+.merch-art .merch-approved-mark{display:block;width:90%;height:90%;aspect-ratio:auto;object-fit:contain}
+.merch-decal-stack{position:absolute;inset:0;background:radial-gradient(ellipse at center,#343940,#121416)}
+.merch-decal-stack .merch-approved-mark{position:absolute;width:61%;height:72%;top:16%;left:20%;filter:drop-shadow(0 1px 1px #fff) drop-shadow(0 4px 4px #000)}
+.merch-decal-stack img:first-child{transform:translate(-19%,-10%) rotate(-14deg)}
+.merch-decal-stack img:nth-child(2){transform:translate(19%,9%) rotate(14deg)}

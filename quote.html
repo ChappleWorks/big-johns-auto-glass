@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://vpic.nhtsa.dot.gov; img-src 'self' blob:; form-action 'none'; base-uri 'none'"><meta name="description" content="Request a mobile or in-shop auto glass quote from Big John’s Customs in Leesburg, Florida."><title>Get a Quote | Big John’s Customs Auto Glass</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="quote.css"><script src="site.js" defer></script><script src="quote.js" type="module"></script></head><body class="quote-page"><a class="skip" href="#main">Skip to content</a>
+<header class="header"><div class="wrap header-inner">
+<a class="brand" href="index.html"><img src="assets/big-johns-chrome-header.webp" width="1536" height="1024" decoding="async" alt="Big John’s Customs Auto Glass"></a>
+<button class="menu secondary" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+<nav id="navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="our-story.html">Our Story</a><a href="quote.html" aria-current="page">Get Quote</a><a href="our-work.html">Our Work &amp; Reviews</a><a href="merch.html">Shop Merch</a></nav>
+<a class="button header-quote" href="quote.html#quote">Get a Quote</a>
+</div></header>
+
+<main id="main">
+<section class="wrap quote-hero">
+ <div><p class="eyebrow">Mobile auto glass · Leesburg, Florida</p><h1>Get a Quote.</h1><p>Show us which glass needs attention. Big John’s team will check fitment, review your options, and get back to you with pricing.</p><div class="quote-hero-actions"><a class="button secondary" href="tel:+13527871113">Call (352) 787-1113</a></div></div>
+ <img src="assets/gmc.webp" alt="Big John’s auto glass work on a GMC" decoding="async">
+</section>
+<section class="wrap quote-workbench" id="quote" aria-label="Quote request">
+ <ol class="quote-progress" aria-label="Quote progress"><li aria-current="step"><span>1</span> Contact</li><li><span>2</span> Vehicle</li><li><span>3</span> Review</li></ol>
+ <div class="quote-guide-link"><p id="quote-step-label" class="eyebrow">Step 1 of 3</p></div>
+ <form id="quote-request" class="form-panel">
+  <fieldset id="customer"><legend>Contact and service address</legend>
+   <div class="quote-grid">
+    <label class="quote-wide">Full name<input name="name" required maxlength="100" autocomplete="name"></label>
+    <label>Phone number<input name="phone" type="tel" required maxlength="32" autocomplete="tel"></label>
+    <label>Email address<input name="email" type="email" required maxlength="180" autocomplete="email"></label>
+    <label class="quote-wide">Street address<input name="address" required maxlength="180" autocomplete="street-address"></label>
+    <label>Service city<input name="city" required maxlength="80" autocomplete="address-level2"></label>
+    <label>ZIP code<input name="zip" required inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" autocomplete="postal-code"></label>
+   </div>
+  </fieldset>
+  <fieldset id="vehicle" hidden><legend>Vehicle and glass</legend>
+   <p>Decode your VIN or enter your vehicle below.</p>
+   <div class="quote-vin"><label>VIN <small>(optional)</small><input name="vin" maxlength="17" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="vin-help"></label><button type="button" class="secondary" id="decode-vin">Decode VIN</button></div>
+   <p id="vin-help" class="quote-hint">VIN lookup sends only the VIN to NHTSA. We’ll verify glass fitment and any sensor or calibration requirements.</p><p id="vin-result" role="status"></p>
+   <div class="quote-grid quote-vehicle"><label>Year<input name="year" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="2020"></label><label>Make<input name="make" required maxlength="60" placeholder="Honda"></label><label>Model<input name="model" required maxlength="60" placeholder="Accord"></label></div>
+   <label>Glass requiring attention<select name="glass" required><option value="">Choose glass</option><option>Windshield</option><option>Rear glass</option><option>Driver side</option><option>Passenger side</option><option>Quarter / vent glass</option><option>Unsure</option></select></label>
+   <label>Damage description <small>(optional)</small><textarea name="damage" rows="2" maxlength="700" placeholder="Tell us what you’re seeing"></textarea></label>
+   <div class="quote-photo-box">
+    <label>Damage photos <small>(optional preview)</small><input id="quote-photos" type="file" accept="image/jpeg,image/png,image/webp" multiple aria-describedby="quote-photo-help"></label>
+    <p id="quote-photo-help" class="quote-hint">Preview up to three JPG, PNG, or WebP photos, up to 8 MB each. Photos stay on this device. Call the shop for instructions to share them.</p>
+    <button class="secondary" type="button" id="clear-photos" hidden>Clear photos</button>
+    <p id="quote-photo-status" role="status"></p><div id="quote-photo-previews" class="quote-photo-previews"></div>
+   </div>
+  </fieldset>
+  <fieldset id="service" hidden><legend>Service preferences</legend>
+   <div class="quote-grid">
+    <label>Payment<select name="payment" required><option value="">Choose payment preference</option><option value="insurance">Insurance</option><option value="cash">Cash</option><option value="considering">Considering cash</option></select></label>
+    <label id="carrier-field" hidden>Insurance carrier<input name="carrier" maxlength="100" disabled></label>
+    <label>Repair or replace preference<select name="preference" required><option value="">Choose a preference</option><option>Repair</option><option>Replace</option><option>Not sure</option></select></label>
+    <label>Service type<select name="service" required><option value="">Choose a service type</option><option>Mobile service</option><option>Shop visit</option></select></label>
+    <label>Preferred installation date or timeframe<input name="timeframe" required maxlength="100" placeholder="For example, next Tuesday afternoon"></label>
+   </div>
+   <p class="quote-hint">John will review the damage and recommend the appropriate service. The shop will confirm your appointment.</p>
+   <label>Scheduling or location notes <small>(optional)</small><textarea name="notes" rows="2" maxlength="700" placeholder="Parking, gate access, or preferred times"></textarea></label>
+   <section class="quote-review" aria-labelledby="quote-review-title"><h2 id="quote-review-title">Review your request</h2><dl id="quote-summary"></dl></section>
+  </fieldset>
+  <div class="quote-trap" hidden><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+  <div class="quote-submit"><button type="button" class="secondary" id="quote-back" hidden>Back</button><button type="button" class="button" id="quote-next">Next: Vehicle</button><button type="submit" hidden class="button" id="send-quote" disabled>Preview request</button><a href="tel:+13527871113">Call the shop</a><button type="button" class="secondary" id="download-quote">Download a draft</button></div>
+  <p id="quote-preview-note" class="quote-hint">Client preview. Use fictional details. This form does not send a quote request.</p><p id="quote-result" class="quote-result" role="status" tabindex="-1"></p>
+  <noscript><p>Call <a href="tel:+13527871113">(352) 787-1113</a> for a quote.</p></noscript>
+ </form>
+</section></main><footer class="site-footer"><div class="wrap footer-inner"><div><strong>Big Johns Customs LLC</strong><br>703 Thomas Ave, Suite 104, Leesburg, FL 34748<br><a href="tel:+13527871113">(352) 787-1113</a></div><div>Monday–Friday, 9 AM–6 PM<br>Saturday and Sunday by appointment only<br><a href="https://www.facebook.com/profile.php?id=100064086723256">Facebook</a></div></div><div class="leonet-strip"><a class="leonet-footer" href="https://leonetsystems.com/"><img src="assets/leonet-footer-display.webp" alt="Powered by LeoNet Systems, LLC" width="2048" height="682"></a></div></footer></body></html>

@@ -23,39 +23,12 @@ const make = (tag, className, text) => {
   if (text) element.textContent = text;
   return element;
 };
-function readState() {
-  try {
-    const saved = JSON.parse(sessionStorage.getItem('big-john-work-demo'));
-    if (saved && Array.isArray(saved.hidden)) return saved;
-  } catch { /* Storage may be disabled. */ }
-  return { hidden: [], featured: null };
-}
-const state = readState();
-function saveState() {
-  try {
-    sessionStorage.setItem('big-john-work-demo', JSON.stringify(state));
-  } catch { return false; }
-  return true;
-}
 function photo(src, alt) {
   const image = make('img');
   image.src = src;
   image.alt = alt;
   return image;
 }
-function showHomeFeature() {
-  const section = select('#work-feature');
-  const job = work.find(item => item.id === state.featured && !state.hidden.includes(item.id));
-  if (!job) return;
-  section.classList.add('split');
-  const details = make('div');
-  const link = make('a', 'text-link', 'View this job in Our Work →');
-  link.href = 'our-work.html#' + job.id;
-  details.append(make('p', 'eyebrow', 'Featured work · Local demo'), make('h2', '', job.title), link);
-  section.append(photo(job.image, job.alt), details);
-  section.hidden = false;
-}
-
 function setupWorkPage() {
   const stage = select('#work-stage');
   const thumbs = select('#work-thumbs');
@@ -81,7 +54,7 @@ function setupWorkPage() {
     return button;
   }
   function render() {
-    visible = work.filter(job => !state.hidden.includes(job.id) && (category === 'all' || category === job.category));
+    visible = work.filter(job => (category === 'all' || category === job.category));
     const job = visible.find(item => item.id === active) ?? visible[0];
     active = job?.id;
     stage.replaceChildren();
@@ -90,6 +63,7 @@ function setupWorkPage() {
     select('#work-title').textContent = job?.title ?? 'No gallery media in this category yet.';
     select('#work-note').textContent = job?.note ?? 'Browse all work to see the photos and videos currently available.';
     select('#work-arrows').hidden = visible.length < 2;
+    select('#work-count').textContent = job ? (visible.indexOf(job) + 1) + ' / ' + visible.length : '';
     for (const button of filterButtons) button.setAttribute('aria-pressed', String(button.dataset.category === category));
     if (!job) return;
     if (job.before) {
@@ -106,8 +80,9 @@ function setupWorkPage() {
       slider.value = 50;
       slider.setAttribute('aria-label', 'Compare empty windshield opening with glass being fitted');
       function reveal() {
-        fitted.style.clipPath = 'inset(0 0 0 ' + slider.value + '%)';
-        comparison.style.setProperty('--split', slider.value + '%');
+        const split = 100 - Number(slider.value);
+        fitted.style.clipPath = 'inset(0 0 0 ' + split + '%)';
+        comparison.style.setProperty('--split', split + '%');
       }
       slider.addEventListener('input', reveal);
       controls.append(make('span', '', 'Opening'), slider, make('span', '', 'Fitting'));
@@ -119,7 +94,7 @@ function setupWorkPage() {
       video.poster = job.image;
       video.controls = true;
       video.playsInline = true;
-      video.preload = 'metadata';
+      video.preload = 'none';
       video.setAttribute('aria-label', job.title);
       stage.append(video);
     } else {
@@ -150,6 +125,11 @@ function setupWorkPage() {
   for (const button of filterButtons) button.addEventListener('click', () => {
     category = button.dataset.category;
     render();
+  });
+  stage.addEventListener('keydown', event => {
+    if (event.target !== stage || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    step(event.key === 'ArrowLeft' ? -1 : 1);
   });
   let touch;
   stage.addEventListener('touchstart', event => {
@@ -183,63 +163,7 @@ function setupWorkPage() {
   select('#review-prev').addEventListener('click', () => showReview(-1));
   select('#review-next').addEventListener('click', () => showReview(1));
 
-  function setupPublishing() {
-    const admin = select('#work-admin');
-    for (const job of work) {
-      const row = make('fieldset', 'work-record');
-      const legend = make('legend', '', job.title);
-      const publishLabel = make('label');
-      const publish = make('input');
-      publish.type = 'checkbox';
-      const feature = make('button', 'secondary');
-      feature.type = 'button';
-      function refresh() {
-        publish.checked = !state.hidden.includes(job.id);
-        feature.disabled = !publish.checked;
-        feature.textContent = state.featured === job.id ? 'Remove homepage feature' : 'Feature on homepage';
-      }
-      function changed() {
-        select('#work-admin-status').textContent = saveState()
-          ? 'Demo gallery and homepage settings saved for this tab.'
-          : 'Gallery updated. Browser storage is unavailable for the homepage preview.';
-        for (const update of refreshers) update();
-        render();
-      }
-      publish.addEventListener('change', () => {
-        state.hidden = state.hidden.filter(id => id !== job.id);
-        if (!publish.checked) {
-          state.hidden.push(job.id);
-          if (state.featured === job.id) state.featured = null;
-        }
-        changed();
-      });
-      feature.addEventListener('click', () => {
-        state.featured = state.featured === job.id ? null : job.id;
-        changed();
-      });
-      publishLabel.append(publish, ' Publish to website');
-      row.append(legend, publishLabel, feature);
-      admin.append(row);
-      refreshers.push(refresh);
-      refresh();
-    }
-  }
-  const refreshers = [];
-  const feedback = select('#work-feedback');
-  feedback.addEventListener('submit', event => {
-    event.preventDefault();
-    try {
-      sessionStorage.setItem('big-john-work-feedback', JSON.stringify(Object.fromEntries(new FormData(feedback))));
-      select('#work-feedback-result').textContent = 'Example feedback saved in this browser tab.';
-      feedback.reset();
-    } catch {
-      select('#work-feedback-result').textContent = 'Browser storage is unavailable. Feedback was not saved.';
-    }
-  });
-  feedback.querySelector('button').disabled = false;
-  setupPublishing();
   showReview();
   render();
 }
 if (select('#work-stage')) setupWorkPage();
-if (select('#work-feature')) showHomeFeature();
